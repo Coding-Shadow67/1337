@@ -1,25 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_negative.c                                   :+:      :+:    :+:   */
+/*   ft_ultimate_ft.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asyani <asyani@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/26 18:40:05 by asyani            #+#    #+#             */
-/*   Updated: 2024/06/27 20:17:42 by asyani           ###   ########.fr       */
+/*   Created: 2024/06/27 21:12:11 by asyani            #+#    #+#             */
+/*   Updated: 2024/06/27 21:41:34 by asyani           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdio.h>
 
-void	ft_is_negative(int n)
+void ft_ultimate_ft(int *********nbr)
 {
-	if (n >= 0)
-	{
-		write(1, "P", 1);
-	}
-	else if (n > 0 || n == '\0')
-	{
-		write(1, "P", 1);
-	}
+	*********nbr = 42;
+}
+
+int main()
+{
+	int n;
+	int *a = &n;
+	int **a1 = &a;
+	int ***a2 = &a1;
+	int ****a3 = &a2;
+	int *****a4 = &a3;
+	int ******a5 = &a4;
+	int *******a6 = &a5;
+	int ********a7 = &a6;
+	int *********a8 = &a7;
+	ft_ultimate_ft(a8);
+	printf("%d\n", *********a8);
+
+
+	return 0;
 }

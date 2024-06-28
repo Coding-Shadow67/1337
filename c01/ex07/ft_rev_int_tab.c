@@ -1,25 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_negative.c                                   :+:      :+:    :+:   */
+/*   ft_rev_int_tab.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asyani <asyani@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/26 18:40:05 by asyani            #+#    #+#             */
-/*   Updated: 2024/06/27 20:17:42 by asyani           ###   ########.fr       */
+/*   Created: 2024/06/28 11:25:34 by asyani            #+#    #+#             */
+/*   Updated: 2024/06/28 12:20:33 by asyani           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdio.h>
 
-void	ft_is_negative(int n)
+void	ft_rev_int_tab(int *tab, int size)
 {
-	if (n >= 0)
+	int		start;
+	int		end;
+	int		swap;
+
+	start = 0;
+	end = size - 1;
+	while (start < end)
 	{
-		write(1, "P", 1);
+		swap = tab[start];
+		tab[start] = tab[end];
+		tab[end] = swap;
+		start++;
+		end--;
 	}
-	else if (n > 0 || n == '\0')
+}
+
+int main()
+{
+	int n[] = {2,3, 9, 6, 5, 4,6};
+	int i;
+	int size = sizeof(n) / sizeof(n[0]);
+
+	ft_rev_int_tab(n, size);
+	for (i = 0; i < size; i++)
 	{
-		write(1, "P", 1);
+		printf("%d", n[i]);
 	}
+	return 0;
 }
