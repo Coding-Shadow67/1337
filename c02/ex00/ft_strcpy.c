@@ -1,23 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asyani <asyani@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/28 11:16:12 by asyani            #+#    #+#             */
-/*   Updated: 2024/06/29 15:04:41 by asyani           ###   ########.fr       */
+/*   Created: 2024/06/29 18:39:29 by asyani            #+#    #+#             */
+/*   Updated: 2024/06/29 18:47:04 by asyani           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+char	*ft_strcpy(char *dest, char *src)
 {
-	int		i;
+	int	i;
 
 	i = 0;
-	while (str[i] != '\0')
+	while (src[i] != '\0')
 	{
+		dest[i] = src[i];
 		i++;
 	}
-	return (i);
+	dest[i] = '\0';
+	return (dest);
 }

@@ -6,7 +6,7 @@
 /*   By: asyani <asyani@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/28 11:25:34 by asyani            #+#    #+#             */
-/*   Updated: 2024/06/28 12:20:33 by asyani           ###   ########.fr       */
+/*   Updated: 2024/06/29 15:37:05 by asyani           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,18 +28,4 @@ void	ft_rev_int_tab(int *tab, int size)
 		start++;
 		end--;
 	}
-}
-
-int main()
-{
-	int n[] = {2,3, 9, 6, 5, 4,6};
-	int i;
-	int size = sizeof(n) / sizeof(n[0]);
-
-	ft_rev_int_tab(n, size);
-	for (i = 0; i < size; i++)
-	{
-		printf("%d", n[i]);
-	}
-	return 0;
 }
