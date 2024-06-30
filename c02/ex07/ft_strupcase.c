@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_printable.c                              :+:      :+:    :+:   */
+/*   ft_strupcase.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asyani <asyani@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/30 16:51:01 by asyani            #+#    #+#             */
-/*   Updated: 2024/06/30 19:56:52 by asyani           ###   ########.fr       */
+/*   Created: 2024/06/30 19:57:15 by asyani            #+#    #+#             */
+/*   Updated: 2024/06/30 20:02:53 by asyani           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_str_is_printable(char *str)
+char	*ft_strupcase(char *str)
 {
 	int	i;
 
 	i = 0;
-	if (*str == '\0')
+
+	while (str[i] != '\0')
 	{
-		return (1);
-	}
-	while (*str != '\0')
-	{
-		if (!(*str >= 32 && *str <= 126))
+		if (str[i] >= 'a' && str[i] <= 'z')
 		{
-			return (0);
+			str[i] -= 32;
 		}
 		i++;
 	}
-	return (1);
+	return (str);
 }
