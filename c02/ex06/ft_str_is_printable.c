@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_alpha.c                                  :+:      :+:    :+:   */
+/*   ft_str_is_printable.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asyani <asyani@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/29 20:48:32 by asyani            #+#    #+#             */
-/*   Updated: 2024/06/29 21:43:42 by asyani           ###   ########.fr       */
+/*   Created: 2024/06/30 16:51:01 by asyani            #+#    #+#             */
+/*   Updated: 2024/06/30 18:11:50 by asyani           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_str_is_alpha(char *str)
+int	ft_str_is_printable(char *str)
 {
-	int		i;
+	int	i;
 
 	i = 0;
-	if (str[i] == '\0')
+	if (*str == '\0')
 	{
-		return (0);
+		return (1);
 	}
-	while (str[i] != '\0')
+	while (*str != '\0')
 	{
-		if (!((str[i] >= 'a' && str[i] <= 'z') || (str[i] >= 'A' && str[i] <= 'Z')))
+		if (!(*str >= 32 && *str <= 127))
 		{
 			return (0);
 		}

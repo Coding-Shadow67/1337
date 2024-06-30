@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_str_is_lowercase.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asyani <asyani@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/29 18:47:50 by asyani            #+#    #+#             */
-/*   Updated: 2024/06/30 13:41:53 by asyani           ###   ########.fr       */
+/*   Created: 2024/06/30 16:38:09 by asyani            #+#    #+#             */
+/*   Updated: 2024/06/30 16:48:46 by asyani           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strncpy(char *dest, char *src, unsigned int n)
+int	ft_str_is_lowercase(char *str)
 {
-	unsigned int		i;
+	int	i;
 
 	i = 0;
-	while (i < n)
+	if (str[i] == '\0')
 	{
-		dest[i] = src[i];
+		return (1);
+	}
+	while (str[i] != '\0')
+	{
+		if (!(str[i] >= 'a' && str[i] <= 'z'))
+		{
+			return (0);
+		}
 		i++;
 	}
-	dest[i] = '\0';
-	return (dest);
+	return (1);
 }
