@@ -1,25 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_putstr_non_printable.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asyani <asyani@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/29 18:47:50 by asyani            #+#    #+#             */
-/*   Updated: 2024/07/01 11:45:30 by asyani           ###   ########.fr       */
+/*   Created: 2024/07/01 19:51:39 by asyani            #+#    #+#             */
+/*   Updated: 2024/07/01 19:56:04 by asyani           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strncpy(char *dest, char *src, unsigned int n)
+void	ft_putstr_non_printable(char *str)
 {
-	unsigned int		i;
+	int	i;
+	int	j;
 
 	i = 0;
-	while (i < n)
+
+	while (str[i] != '\0')
 	{
-		dest[i] = src[i];
-		i++;
-	}
-	dest[i] = '\0';
-	return (dest);
-}
+		if ( 

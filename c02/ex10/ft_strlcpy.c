@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asyani <asyani@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/29 18:47:50 by asyani            #+#    #+#             */
-/*   Updated: 2024/07/01 11:45:30 by asyani           ###   ########.fr       */
+/*   Created: 2024/07/01 14:38:31 by asyani            #+#    #+#             */
+/*   Updated: 2024/07/01 15:06:48 by asyani           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strncpy(char *dest, char *src, unsigned int n)
+unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 {
-	unsigned int		i;
+	unsigned int	n;
+	unsigned int	length;
 
-	i = 0;
-	while (i < n)
+	n = 0;
+	length = 0;
+	while (length < size - 1)
 	{
-		dest[i] = src[i];
-		i++;
+		if (src[length] != '\0')
+		{
+			n++;
+		}
+		length++;
 	}
-	dest[i] = '\0';
-	return (dest);
+	return (n);
 }
