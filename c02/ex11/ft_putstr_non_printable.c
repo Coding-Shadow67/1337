@@ -10,30 +10,35 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
+
+#include <unistd.h>
+
 char    is_printable(char c)
 {
-    if (c > 32 && c <= 126)
+    if (c >= 32 && c <= 126)
     {
         return (c);
     }
     return (0);
 }
 
-void    to_hex(int n)
+void    ft_putchar(char c)
 {
-
+    write(1, &c, 1);
 }
 
-void ft_putstr_non_printable(char *str)
+void    to_hex(int n)
+{
+    char *hex_digits = "0123456789abcdef";
+    ft_putchar('\\');
+    ft_putchar(hex_digits[n / 16]);
+    ft_putchar(hex_digits[n % 16]);
+}
+
+void    ft_putstr_non_printable(char *str)
 {
     int i;
-    int count;
 
-    count = 0;
     i = 0;
     while (str[i] != '\0')
     {
@@ -41,11 +46,10 @@ void ft_putstr_non_printable(char *str)
         {
             ft_putchar(str[i]);
         }
-        else if (!is_printable(str[i]))
+        else
         {
-			if (str[i] >= 10)
-			{
+            to_hex((unsigned char)str[i]);
         }
+        i++;
     }
 }
-
