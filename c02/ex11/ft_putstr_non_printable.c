@@ -6,7 +6,7 @@
 /*   By: asyani <asyani@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 19:51:39 by asyani            #+#    #+#             */
-/*   Updated: 2024/07/03 14:02:32 by asyani           ###   ########.fr       */
+/*   Updated: 2024/07/03 17:12:32 by asyani           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ char	is_printable(char c)
 
 void	to_hex(int n)
 {
-	char	hex_digits[];
+	char	*hex_digits;
 
-	hex_digits[] = "0123456789abcdef";
+	hex_digits = "0123456789abcdef";
 	ft_putchar('\\');
 	ft_putchar(hex_digits[n / 16]);
 	ft_putchar(hex_digits[n % 16]);

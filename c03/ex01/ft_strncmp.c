@@ -1,20 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asyani <asyani@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/29 10:10:44 by asyani            #+#    #+#             */
-/*   Updated: 2024/07/03 17:05:03 by asyani           ###   ########.fr       */
+/*   Created: 2024/07/03 21:27:50 by asyani            #+#    #+#             */
+/*   Updated: 2024/07/03 21:31:32 by asyani           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+int	ft_strncmp(char *s1, char *s2, unsigned int n)
+{
+	int	i;
 
-int main() {
-    // Write C code here
-    write(2, "Try", 3);
-
-    return 0;
+	i = 0;
+	while (i < n && s1[i] != '\0' && s2[i] != '\0')
+	{
+		if (s1[i] != s2[i])
+		{
+			return (s1[i] - s2[i]);
+		}
+		i++;
+	}
+	return (s1[i] - s2[i]);
 }
