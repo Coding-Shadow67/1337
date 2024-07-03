@@ -6,13 +6,13 @@
 /*   By: asyani <asyani@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/30 16:49:27 by asyani            #+#    #+#             */
-/*   Updated: 2024/07/01 11:36:42 by asyani           ###   ########.fr       */
+/*   Updated: 2024/07/03 14:06:21 by asyani           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_str_is_lowercase(char *str)
+int	ft_str_is_uppercase(char *str)
 {
-	int	i;
+	int		i;
 
 	i = 0;
 	if (str[i] == '\0')
