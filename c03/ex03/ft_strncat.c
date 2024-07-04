@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asyani <asyani@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/03 21:27:50 by asyani            #+#    #+#             */
-/*   Updated: 2024/07/04 09:05:55 by asyani           ###   ########.fr       */
+/*   Created: 2024/07/04 09:50:31 by asyani            #+#    #+#             */
+/*   Updated: 2024/07/04 10:22:29 by asyani           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
+char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
 	unsigned int	i;
+	unsigned int	j;
 
 	i = 0;
-	while (i < n && s1[i] != '\0' && s2[i] != '\0')
+	j = 0;
+	while (dest[i] != '\0')
 	{
-		if (s1[i] != s2[i])
-		{
-			return (s1[i] - s2[i]);
-		}
 		i++;
 	}
-	if (i < n)
+	while (j < nb && src[j] != '\0')
 	{
-		return (s1[i] - s2[i]);
+		dest[i] = src[j];
+		i++;
+		j++;
 	}
-	else
-		return (0);
+	dest[i] = '\0';
+	return (dest);
 }
