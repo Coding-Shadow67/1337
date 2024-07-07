@@ -6,7 +6,7 @@
 /*   By: asyani <asyani@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/07 11:50:21 by asyani            #+#    #+#             */
-/*   Updated: 2024/07/07 18:22:19 by asyani           ###   ########.fr       */
+/*   Updated: 2024/07/07 20:43:01 by asyani           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-int	ft_strlen(char *str)
+long	ft_strlen(char *str)
 {
 	int	n;
 
@@ -31,9 +31,9 @@ int	ft_strlen(char *str)
 
 int	ft_isvalid(char *str)
 {
-	int	i;
-	int	j;
-	int	base_len;
+	int		i;
+	int		j;
+	long	base_len;
 
 	i = 0;
 	if (!str || str[0] == '\0')
@@ -43,7 +43,7 @@ int	ft_isvalid(char *str)
 		return (0);
 	while (str[i] != '\0')
 	{
-		if (str[i] == '-' || str[i] == '+')
+		if (str[i] == '-' || str[i] == '+' || (str[i] <= 32 || str[i] >= 127))
 			return (0);
 		j = i + 1;
 		while (str[j] != '\0')
@@ -59,9 +59,9 @@ int	ft_isvalid(char *str)
 
 void	ft_putnbr_base(int nbr, char *base)
 {
-	int	base_len;
-	int	i;
-	long int nb;
+	long			base_len;
+	int				i;
+	long int		nb;
 
 	i = 0;
 	nb = nbr;
