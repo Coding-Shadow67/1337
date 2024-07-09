@@ -1,33 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_iterative_power.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asyani <asyani@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/04 10:23:15 by asyani            #+#    #+#             */
-/*   Updated: 2024/07/07 17:37:32 by asyani           ###   ########.fr       */
+/*   Created: 2024/07/08 13:16:09 by asyani            #+#    #+#             */
+/*   Updated: 2024/07/09 10:08:01 by asyani           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strstr(char *str, char *to_find)
+int	ft_iterative_power(int nb, int power)
 {
-	int	i;
-	int	j;
+	int	res;
 
-	i = 0;
-	if (to_find[0] == '\0')
-		return (str);
-	while (str[i] != '\0')
+	res = 1;
+	if (power < 0)
+		return (0);
+	if (nb == 0 && power == 0)
+		return (1);
+	while (power > 0)
 	{
-		j = 0;
-		while (to_find[j] != '\0' && str[j + i] == to_find[j])
-		{
-			j++;
-		}
-		if (to_find[j] == '\0')
-			return (str + i);
-		i++;
+		res = res * nb;
+		power--;
 	}
-	return (0);
+	return (res);
 }

@@ -1,33 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_print_program_name.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asyani <asyani@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/04 10:23:15 by asyani            #+#    #+#             */
-/*   Updated: 2024/07/07 17:37:32 by asyani           ###   ########.fr       */
+/*   Created: 2024/07/08 14:01:17 by asyani            #+#    #+#             */
+/*   Updated: 2024/07/08 14:09:42 by asyani           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strstr(char *str, char *to_find)
+#include <unistd.h>
+
+int	main(int argc, char **argv)
 {
 	int	i;
-	int	j;
 
 	i = 0;
-	if (to_find[0] == '\0')
-		return (str);
-	while (str[i] != '\0')
+	if (argc == 1)
 	{
-		j = 0;
-		while (to_find[j] != '\0' && str[j + i] == to_find[j])
+		while (argv[0][i] != '\0')
 		{
-			j++;
+			write(1, &argv[0][i], 1);
+			i++;
 		}
-		if (to_find[j] == '\0')
-			return (str + i);
-		i++;
+		write(1, "\n", 1);
 	}
 	return (0);
 }

@@ -1,33 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_fibonacci.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asyani <asyani@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/04 10:23:15 by asyani            #+#    #+#             */
-/*   Updated: 2024/07/07 17:37:32 by asyani           ###   ########.fr       */
+/*   Created: 2024/07/09 11:17:06 by asyani            #+#    #+#             */
+/*   Updated: 2024/07/09 11:29:48 by asyani           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strstr(char *str, char *to_find)
+int	ft_fibonacci(int index)
 {
-	int	i;
-	int	j;
-
-	i = 0;
-	if (to_find[0] == '\0')
-		return (str);
-	while (str[i] != '\0')
-	{
-		j = 0;
-		while (to_find[j] != '\0' && str[j + i] == to_find[j])
-		{
-			j++;
-		}
-		if (to_find[j] == '\0')
-			return (str + i);
-		i++;
-	}
-	return (0);
+	if (index < 0)
+		return (-1);
+	if (index == 1 || index == 2)
+		return (1);
+	if (index == 0)
+		return (0);
+	return (ft_fibonacci(index - 1) + ft_fibonacci(index - 2));
 }

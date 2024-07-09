@@ -1,33 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_recursive_factorial.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asyani <asyani@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/04 10:23:15 by asyani            #+#    #+#             */
-/*   Updated: 2024/07/07 17:37:32 by asyani           ###   ########.fr       */
+/*   Created: 2024/07/08 09:49:35 by asyani            #+#    #+#             */
+/*   Updated: 2024/07/09 09:37:48 by asyani           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strstr(char *str, char *to_find)
+int	ft_recursive_factorial(int nb)
 {
 	int	i;
-	int	j;
 
-	i = 0;
-	if (to_find[0] == '\0')
-		return (str);
-	while (str[i] != '\0')
-	{
-		j = 0;
-		while (to_find[j] != '\0' && str[j + i] == to_find[j])
-		{
-			j++;
-		}
-		if (to_find[j] == '\0')
-			return (str + i);
-		i++;
-	}
+	i = 1;
+	if (nb == 0 || nb == 1)
+		return (1);
+	if (i <= nb)
+		return (nb * ft_recursive_factorial(nb - 1));
 	return (0);
 }
