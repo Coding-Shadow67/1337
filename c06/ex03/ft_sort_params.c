@@ -6,7 +6,7 @@
 /*   By: asyani <asyani@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 18:01:42 by asyani            #+#    #+#             */
-/*   Updated: 2024/07/10 13:20:40 by asyani           ###   ########.fr       */
+/*   Updated: 2024/07/10 18:17:20 by asyani           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	ft_sort(int argc, char **argv)
 	char	*swap;
 
 	i = 1;
-	while (i < argc - 1)
+	while (i < argc)
 	{
 		j  = i + 1;
 		while (j < argc)
