@@ -6,11 +6,16 @@
 /*   By: asyani <asyani@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 14:01:17 by asyani            #+#    #+#             */
-/*   Updated: 2024/07/08 14:09:42 by asyani           ###   ########.fr       */
+/*   Updated: 2024/07/10 13:15:10 by asyani           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
 
 int	main(int argc, char **argv)
 {
@@ -21,10 +26,10 @@ int	main(int argc, char **argv)
 	{
 		while (argv[0][i] != '\0')
 		{
-			write(1, &argv[0][i], 1);
+			ft_putchar(argv[0][i]);
 			i++;
 		}
-		write(1, "\n", 1);
+		ft_putchar('\n');
 	}
 	return (0);
 }
