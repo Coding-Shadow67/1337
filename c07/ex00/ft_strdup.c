@@ -6,7 +6,7 @@
 /*   By: asyani <asyani@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 13:40:52 by asyani            #+#    #+#             */
-/*   Updated: 2024/07/10 16:24:10 by asyani           ###   ########.fr       */
+/*   Updated: 2024/07/13 15:00:19 by asyani           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	ft_strlen(char *str)
 char	*ft_strdup(char *src)
 {
 	char	*dup;
-	int	i;
+	int		i;
 
 	i = 0;
 	dup = (char *)malloc(ft_strlen(src) + 1);
