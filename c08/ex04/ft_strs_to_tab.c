@@ -6,7 +6,7 @@
 /*   By: asyani <asyani@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/16 10:48:03 by asyani            #+#    #+#             */
-/*   Updated: 2024/07/16 20:42:32 by asyani           ###   ########.fr       */
+/*   Updated: 2024/07/17 09:20:04 by asyani           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,10 @@ int	ft_strlen(char *str)
 	return (i);
 }
 
-char *ft_strdup(char *src)
+char	*ft_strdup(char *src)
 {
-	int	length;
-	int	i;
+	int		length;
+	int		i;
 	char	*dup;
 
 	i = 0;
@@ -46,10 +46,10 @@ char *ft_strdup(char *src)
 
 struct s_stock_str	*ft_strs_to_tab(int ac, char **av)
 {
-	int	i;
-	s_stock_str	*range;
+	int			i;
+	t_stock_str	*range;
 
-	range = (s_stock_str *)malloc(sizeof(s_stock_str) * (ac + 1));
+	range = (t_stock_str *)malloc(sizeof(t_stock_str) * (ac + 1));
 	if (range == NULL)
 		return (NULL);
 	i = 0;
@@ -59,7 +59,7 @@ struct s_stock_str	*ft_strs_to_tab(int ac, char **av)
 		range[i].str = av[i];
 		range[i].copy = ft_strdup(av[i]);
 		if (range[i].copy == NULL)
-			return NULL;
+			return (NULL);
 		i++;
 	}
 	range[i].size = 0;
