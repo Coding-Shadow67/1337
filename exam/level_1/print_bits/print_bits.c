@@ -1,45 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   print_bits.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asyani <asyani@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/10 13:40:52 by asyani            #+#    #+#             */
-/*   Updated: 2024/07/16 17:05:17 by asyani           ###   ########.fr       */
+/*   Created: 2024/07/18 16:43:32 by asyani            #+#    #+#             */
+/*   Updated: 2024/07/18 16:54:57 by asyani           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include <unistd.h>
 
-int	ft_strlen(char *str)
+void	print_bits(unsigned char octet)
 {
-	int	i;
+	int i = 256;
 
-	i = 0;
-	while (str[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
+	while (i >>= 1)
+		(octet & i) ? write(1, "1", 1) : write(1, "0", 1);
 }
 
-char	*ft_strdup(char *src)
+int main()
 {
-	char	*dup;
-	int		i;
-	int		leng;
+	int i = 10;
+	
+	print_bits(i);
 
-	i = 0;
-	leng = ft_strlen(src);
-	dup = malloc(sizeof(char) * (leng + 1));
-	if (dup == NULL)
-		return (NULL);
-	while (src[i] != '\0')
-	{
-		dup[i] = src[i];
-		i++;
-	}
-	dup[i] = '\0';
-	return (dup);
+	return (0);
 }

@@ -5,12 +5,13 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: asyani <asyani@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/16 10:48:03 by asyani            #+#    #+#             */
-/*   Updated: 2024/07/17 09:20:04 by asyani           ###   ########.fr       */
+/*   Created: 2024/07/16 20:43:04 by asyani            #+#    #+#             */
+/*   Updated: 2024/07/17 13:55:16 by asyani           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include <unistd.h>
+#include "ft_stock_str.h"
 
 int	ft_strlen(char *str)
 {

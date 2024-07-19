@@ -1,45 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asyani <asyani@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/10 13:40:52 by asyani            #+#    #+#             */
-/*   Updated: 2024/07/16 17:05:17 by asyani           ###   ########.fr       */
+/*   Created: 2024/06/28 09:58:43 by asyani            #+#    #+#             */
+/*   Updated: 2024/06/29 15:01:59 by asyani           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-
-int	ft_strlen(char *str)
+void	ft_swap(int *a, int *b)
 {
-	int	i;
+	int		swap;
 
-	i = 0;
-	while (str[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
-}
-
-char	*ft_strdup(char *src)
-{
-	char	*dup;
-	int		i;
-	int		leng;
-
-	i = 0;
-	leng = ft_strlen(src);
-	dup = malloc(sizeof(char) * (leng + 1));
-	if (dup == NULL)
-		return (NULL);
-	while (src[i] != '\0')
-	{
-		dup[i] = src[i];
-		i++;
-	}
-	dup[i] = '\0';
-	return (dup);
+	swap = *a;
+	*a = *b;
+	*b = swap;
 }

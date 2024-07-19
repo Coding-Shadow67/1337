@@ -1,45 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   rostring.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asyani <asyani@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/10 13:40:52 by asyani            #+#    #+#             */
-/*   Updated: 2024/07/16 17:05:17 by asyani           ###   ########.fr       */
+/*   Created: 2024/07/18 17:58:52 by asyani            #+#    #+#             */
+/*   Updated: 2024/07/18 18:37:36 by asyani           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-
-int	ft_strlen(char *str)
+int	main(int argc, char **argv)
 {
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
+	if (argc > 1)
 	{
-		i++;
+		ft_putchar('\n');
 	}
-	return (i);
-}
-
-char	*ft_strdup(char *src)
-{
-	char	*dup;
-	int		i;
-	int		leng;
-
-	i = 0;
-	leng = ft_strlen(src);
-	dup = malloc(sizeof(char) * (leng + 1));
-	if (dup == NULL)
-		return (NULL);
-	while (src[i] != '\0')
+	else
 	{
-		dup[i] = src[i];
-		i++;
-	}
-	dup[i] = '\0';
-	return (dup);
-}
+		int u = argv[1];
+		while (argv[1][i] != '\0')
+		{
+			i++;
+		}
+		while (argv[1][u] != ' ' || argv[1][u] != '\t')
+		{
+

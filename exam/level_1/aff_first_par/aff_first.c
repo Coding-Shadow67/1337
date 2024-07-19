@@ -1,45 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   aff_first.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asyani <asyani@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/10 13:40:52 by asyani            #+#    #+#             */
-/*   Updated: 2024/07/16 17:05:17 by asyani           ###   ########.fr       */
+/*   Created: 2024/07/17 10:07:30 by asyani            #+#    #+#             */
+/*   Updated: 2024/07/17 10:55:05 by asyani           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include <unistd.h>
 
-int	ft_strlen(char *str)
+void ft_putchar(char c)
 {
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
+	write(1, &c, 1);
 }
 
-char	*ft_strdup(char *src)
+int main(int argc, char **argv)
 {
-	char	*dup;
-	int		i;
-	int		leng;
+	int i;
 
 	i = 0;
-	leng = ft_strlen(src);
-	dup = malloc(sizeof(char) * (leng + 1));
-	if (dup == NULL)
-		return (NULL);
-	while (src[i] != '\0')
+	if (argc <  1)
 	{
-		dup[i] = src[i];
-		i++;
+		ft_putchar('\n');
 	}
-	dup[i] = '\0';
-	return (dup);
+	else
+	{
+		while (argv[1][i] != '\0')
+		{
+			if (argv[1][i] != ' ')
+			{
+				ft_putchar(argv[1][i]);
+			}
+			else
+				ft_putchar(' ');
+			i++;
+		}
+		ft_putchar('\n');
+	}
 }

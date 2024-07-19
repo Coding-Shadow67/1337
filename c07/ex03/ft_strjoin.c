@@ -6,7 +6,7 @@
 /*   By: asyani <asyani@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/13 20:21:26 by asyani            #+#    #+#             */
-/*   Updated: 2024/07/13 21:37:39 by asyani           ###   ########.fr       */
+/*   Updated: 2024/07/16 13:13:16 by asyani           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,17 +72,18 @@ char	*concatenate_strings(int size, char **strs, char *sep)
 	char	*arr;
 
 	i = 0;
+	if (size == 0)
+	{
+		arr[0] = '\0';
+		return (arr);
+	}
 	full_size = calculate_total_size(size, strs, sep);
 	arr = malloc(full_size * sizeof(char));
 	if (arr == NULL)
 	{
 		return (NULL);
 	}
-	if (size == 0)
-	{
-		arr[0] = '\0';
-		return (arr);
-	}
+	*arr = '\0';
 	while (i < size)
 	{
 		ft_strcat(arr, strs[i]);

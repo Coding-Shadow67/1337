@@ -6,7 +6,7 @@
 /*   By: asyani <asyani@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 16:40:40 by asyani            #+#    #+#             */
-/*   Updated: 2024/07/13 15:01:02 by asyani           ###   ########.fr       */
+/*   Updated: 2024/07/16 11:57:26 by asyani           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,15 @@ int	*ft_range(int min, int max)
 	i = 0;
 	if (min >= max)
 		return (NULL);
-	range = malloc(sizeof(max) - sizeof(min));
+	size = max - min;
+	range = malloc(sizeof(int) * size);
 	if (range == NULL)
 		return (NULL);
-	while (i < (max - min))
+	while (min < max)
 	{
-		range[i] = min + i;
+		range[i] = min;
 		i++;
+		min++;
 	}
 	return (range);
 }

@@ -6,7 +6,7 @@
 /*   By: asyani <asyani@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/16 20:43:04 by asyani            #+#    #+#             */
-/*   Updated: 2024/07/17 09:45:11 by asyani           ###   ########.fr       */
+/*   Updated: 2024/07/17 11:37:55 by asyani           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,8 @@ void	ft_show_tab(struct s_stock_str *par)
 	while (par[i].str)
 	{
 		ft_putstr(par[i].str);
-		ft_putstr(par[i].size);
+		ft_putnbr(par[i].size);
+		ft_putchar('\n');
 		ft_putstr(par[i].copy);
 		i++;
 	}

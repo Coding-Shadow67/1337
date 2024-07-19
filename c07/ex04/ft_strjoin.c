@@ -6,7 +6,7 @@
 /*   By: asyani <asyani@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/13 20:21:26 by asyani            #+#    #+#             */
-/*   Updated: 2024/07/13 20:42:48 by asyani           ###   ########.fr       */
+/*   Updated: 2024/07/14 16:24:34 by asyani           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,76 +45,56 @@ char	*ft_strcat(char *dest, char *src)
 	return (dest);
 }
 
-int calculate_total_size(int size, char **strs, char *sep)
+int	calculate_total_size(int size, char **strs, char *sep)
 {
-    int	str_size;
+	int	str_size;
 	int	i;
-    int	sep_size;
+	int	sep_size;
 
 	sep_size = ft_strlen(sep);
 	str_size = 0;
 	i = 0;
-    while (i < size)
+	while (i < size)
 	{
-        str_size += ft_strlen(strs[i]);
+		str_size += ft_strlen(strs[i]);
 		i++;
-    }
-    if (size > 0)
-        return str_size + sep_size * (size - 1) + 1;
+	}
+	if (size > 0)
+		return (str_size + sep_size * (size - 1) + 1);
 	else
-        return 1;
+		return (1);
 }
 
-char *concatenate_strings(int size, char **strs, char *sep)
+char	*concatenate_strings(int size, char **strs, char *sep)
 {
-    int full_size;
-	int	i;
-	char *arr;
-   
+	int		full_size;
+	int		i;
+	char	*arr;
+
 	i = 0;
 	full_size = calculate_total_size(size, strs, sep);
 	arr = malloc(full_size * sizeof(char));
-    if (arr == NULL)
+	if (arr == NULL)
 	{
-        return NULL;
-    }
+		return (NULL);
+	}
+	arr[i] = '\0';
 	if (size == 0)
 	{
-    	arr[0] = '\0';
+		arr[0] = '\0';
 		return (arr);
 	}
-    while (i < size)
+	while (i < size)
 	{
-        ft_strcat(arr, strs[i]);
-        if (i < size - 1)
-		{
-            ft_strcat(arr, sep);
-        }
+		ft_strcat(arr, strs[i]);
+		if (i < size - 1)
+			ft_strcat(arr, sep);
 		i++;
-    }
-    return arr;
+	}
+	return (arr);
 }
 
-char *ft_strjoin(int size, char **strs, char *sep)
+char	*ft_strjoin(int size, char **strs, char *sep)
 {
-    /*if (size == 0) {
-        char *arr = malloc(sizeof(char));
-        if (arr == NULL) {
-            return NULL;
-        }
-        return arr;
-    }*/
-    return concatenate_strings(size, strs, sep);
-}
-
-#include <stdio.h>
-
-int main() {
-
-    char *str[] = {"hello", "abdo","How","are","youu", "today", "I hope", "you are", "fine"};
-    char sep[] = "-!<>+<>!-";
-
-    char *result = ft_strjoin(9, str, sep);
-    printf("%s\n", result);
-    return 0;
+	return (concatenate_strings(size, strs, sep));
 }

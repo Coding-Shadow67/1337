@@ -1,47 +1,53 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   last_word.c                                        :+:      :+:    :+:   */
+/*   sum_array.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asyani <asyani@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/12 10:04:46 by asyani            #+#    #+#             */
-/*   Updated: 2024/07/12 11:49:56 by asyani           ###   ########.fr       */
+/*   Created: 2024/07/13 17:27:31 by asyani            #+#    #+#             */
+/*   Updated: 2024/07/13 20:13:04 by asyani           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stdio.h>
+#include <unistd.h>
 
 #include <unistd.h>
 
 void ft_putchar(char c)
 {
-	write(1, &c, 1);
+    write(1, &c, 1);
 }
 
-int	main(int argc, char **argv)
+void putnbr(int nb)
 {
-	int	i;
-	int j;
-	int k;
-
-	i = 0;
-	if (argc == 2)
-	{
-		while (argv[1][i] != '\0')
-		{
-			i++;
-		}
-		i--;
-		while (i >= 0 && (argv[1][j] == ' ' || argv[1][j] == '\t'))
-		{
-			i--;
-		}
-		while (j >= 0)
-		{
-			ft_putchar(argv[1][j]);
-			j++;
-		}
-	}
-	else
-		ft_putchar('\n');
-	return (0);
+    if (nb >= 10)
+    {
+        putnbr(nb / 10);
+    }
+    ft_putchar(nb % 10 + '0');
 }
+
+void printNumbers(int nb)
+{
+    putnbr(nb);  
+
+    if (nb < 50)
+    {
+        ft_putchar(' ');
+    }
+
+    if (nb < 50)
+    {
+        printNumbers(nb + 1);
+    }
+}
+
+int main() {
+    printNumbers(1); 
+
+    ft_putchar('\n');      
+	return 0;
+}
+
